@@ -89,4 +89,34 @@ public class LinkedList {
         return count;
     }
 
+    public void clear() {
+        head = null;
+    }
+
+    public void deleteValue(int data) {
+
+        // if head
+        if (head == null) {
+            return;
+        }
+
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+
+        // else walk the list
+        Node current = head;
+
+        Node now = head;
+        while(current.next != null) {
+
+            if (current.next.data == data) {
+                current.next = current.next.next;
+                return;
+            }
+
+            current = current.next;
+    }
+
 }
