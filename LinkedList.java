@@ -8,6 +8,7 @@ public class LinkedList {
     }
 
     private Node head;
+    private int size;
 
     public void addFront(int data) {
 
@@ -25,6 +26,8 @@ public class LinkedList {
 
         // Set current head be the new head
         head = newNode;
+
+        size++;
     }
 
     public int getFirst() {
@@ -67,6 +70,23 @@ public class LinkedList {
         current.next = newNode;
 
         newNode.next = null;
+    }
+
+    public int size() {
+
+        if (head == null) {
+            return 0;
+        }
+
+        int count = 1;
+        Node current = head;
+
+        while (current.next != null) {
+            current = current.next;
+            count++;
+        }
+
+        return count;
     }
 
 }
